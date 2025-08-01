@@ -38,7 +38,6 @@ const Dashboard: React.FC = () => {
     <div className="min-h-screen bg-gray-50 p-4">
       <h2 className="text-3xl font-bold text-center text-blue-700 mb-6">Malware Scan Dashboard</h2>
 
-      {/* Filter Buttons */}
       <div className="flex flex-wrap justify-center gap-3 mb-6">
         {['all', 'pending', 'clean', 'infected'].map((f) => (
           <button
@@ -63,7 +62,6 @@ const Dashboard: React.FC = () => {
         ))}
       </div>
 
-      {/* Table */}
       <div className="overflow-x-auto">
         <table className="min-w-full border border-gray-300 bg-white text-sm shadow rounded-lg">
           <thead className="bg-blue-100 text-blue-800">
@@ -110,7 +108,6 @@ const Dashboard: React.FC = () => {
         </table>
       </div>
 
-      {/* Pagination */}
       {totalPages > 1 && (
         <div className="flex justify-center mt-6 gap-2">
           {Array.from({ length: totalPages }, (_, i) => i + 1).map((pg) => (
@@ -127,7 +124,6 @@ const Dashboard: React.FC = () => {
         </div>
       )}
 
-      {/* Modal with blurred background */}
      {selectedFile && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm">
     <div className="absolute inset-0" onClick={() => setSelectedFile(null)} />

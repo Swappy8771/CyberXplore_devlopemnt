@@ -1,4 +1,3 @@
-// services/queueService.js
 const amqp = require('amqplib');
 
 const QUEUE_NAME = 'file_scan_queue';
@@ -16,13 +15,13 @@ const sendToQueue = async (data) => {
       { persistent: true }
     );
 
-    console.log(`📨 Job queued: ${data.filename}`);
+    console.log(`Job queued: ${data.filename}`);
 
     setTimeout(() => {
       connection.close();
     }, 500);
   } catch (error) {
-    console.error('❌ Failed to send job to RabbitMQ:', error.message);
+    console.error('Failed to send job to RabbitMQ:', error.message);
   }
 };
 

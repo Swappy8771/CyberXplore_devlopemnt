@@ -1,4 +1,3 @@
-// worker/index.js
 require('dotenv').config();
 const amqp = require('amqplib');
 const mongoose = require('mongoose');
@@ -16,7 +15,7 @@ const startWorker = async () => {
 
     await channel.assertQueue(QUEUE_NAME, { durable: true });
 
-    console.log('👷 Worker is listening for jobs...');
+    console.log('Worker is listening for jobs...');
 
     channel.consume(QUEUE_NAME, async (msg) => {
       if (msg !== null) {
@@ -24,11 +23,11 @@ const startWorker = async () => {
 
         await simulateMalwareScan(jobData);
 
-        channel.ack(msg); // Mark job as done
+        channel.ack(msg); 
       }
     });
   } catch (err) {
-    console.error('❌ Worker error:', err.message);
+    console.error('Worker error:', err.message);
     process.exit(1);
   }
 };

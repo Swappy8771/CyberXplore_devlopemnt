@@ -1,4 +1,3 @@
-// src/components/FileCard.tsx
 import React from 'react';
 import type { FileItem } from '../types/File';
 

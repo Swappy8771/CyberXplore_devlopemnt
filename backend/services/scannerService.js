@@ -1,4 +1,3 @@
-// services/scannerService.js
 const fs = require('fs').promises;
 const pathModule = require('path');
 const pdfParse = require('pdf-parse');
@@ -41,7 +40,7 @@ const simulateMalwareScan = async ({ fileId, path }) => {
 
     console.log(`✅ File scanned: ${path} → ${result.toUpperCase()}`);
   } catch (error) {
-    console.error('❌ Error during scan:', error.message);
+    console.error('Error during scan:', error.message);
   }
 };
 

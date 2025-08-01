@@ -8,7 +8,7 @@ const uploadFile = async (req, res) => {
 
     // Handle missing file
     if (!file) {
-      return res.status(400).json({ message: '❌ No file uploaded' });
+      return res.status(400).json({ message: ' No file uploaded' });
     }
 
     // Create MongoDB record
@@ -43,8 +43,8 @@ const uploadFile = async (req, res) => {
       },
     });
   } catch (err) {
-    console.error('❌ Upload error:', err.message);
-    res.status(500).json({ message: '❌ Upload failed, please try again' });
+    console.error('Upload error:', err.message);
+    res.status(500).json({ message: 'Upload failed, please try again' });
   }
 };
 
@@ -65,8 +65,8 @@ const getAllFiles = async (req, res) => {
       }))
     });
   } catch (err) {
-    console.error('❌ Failed to fetch files:', err.message);
-    res.status(500).json({ message: '❌ Could not retrieve file list' });
+    console.error('Failed to fetch files:', err.message);
+    res.status(500).json({ message: ' Could not retrieve file list' });
   }
 };
 

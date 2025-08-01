@@ -12,7 +12,6 @@ app.use(cors());
 app.use('/upload', express.static('uploads'));
 app.use(express.json());
 
-// Routes
 app.use('/', fileRoutes);
 
 const PORT = process.env.PORT || 5000;
