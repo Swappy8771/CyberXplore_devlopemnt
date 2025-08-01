@@ -57,5 +57,4 @@ npm run dev
 
 - Swapnil Patil | Full Stack Developer
 
-## 📄 License
 
